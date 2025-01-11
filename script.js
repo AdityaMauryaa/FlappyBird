@@ -122,13 +122,20 @@ function update(){
     context.fillText(score,5,45);
 if(gameOver){
 
-    context.fillText("GAME OVER ",50,350);
+    context.fillText("GAME OVER",50,300);
 }
 }
 function moveBird(e){
     if(e.code=="Space" || e.code=="ArrowUp" || e.code=="KeyX"){
         //jump
         velocity=-6;
+
+        if(gameOver){
+            bird.y=birdy;
+            pipearray=[];
+            score=0;
+            gameOver=false;
+        }
     }
 }
 function detectCollision(a,b){
