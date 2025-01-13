@@ -8,3 +8,6 @@ body{background-color: #548687;
 #board{
     background-image: url("./flappybirdbg.png");
 }
+#board:focus {
+    outline: none;
+}
