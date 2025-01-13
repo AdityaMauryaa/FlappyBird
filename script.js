@@ -59,6 +59,7 @@ window.onload=function(){
     requestAnimationFrame(update);
     setInterval(placePipe,1500);
     document.addEventListener("keydown",moveBird);
+    board.addEventListener("touchstart", moveBirdTouch);
 }
 function placePipe(){
     if(gameOver){
@@ -137,6 +138,9 @@ function moveBird(e){
             gameOver=false;
         }
     }
+}
+function moveBirdTouch() {
+    jump();
 }
 function detectCollision(a,b){
     return a.x<b.x+b.width && 
