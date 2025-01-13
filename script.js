@@ -61,7 +61,11 @@ window.onload = function () {
     // Event listeners
     document.addEventListener("keydown", moveBird);
     board.addEventListener("touchstart", jump);
-    board.addEventListener("click", jump); // Fallback for touch events
+    board.addEventListener("click", jump); 
+
+      board.addEventListener("touchstart", function (e) {
+        e.preventDefault();
+    });
 };
 
 // place pipes
